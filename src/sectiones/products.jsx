@@ -42,7 +42,7 @@ const Products = () => {
                 <ScetionCarousel
                     carouselItemsDiv={getproducts() }
                     arrowsDisplay =""
-                    flexorgrid ="grid grid-rows-2 grid-flow-col	"
+                    flexorgrid ="grid grid-rows-2 grid-flow-col"
                     justify=""
                 />
                 <div className='flex justify-center'>
