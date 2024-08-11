@@ -5,11 +5,16 @@ import Footer from '../sectiones/Footer';
 
 const Root = () => {
     return (
-        <>
-        <Navbar />
-        <HomePage />
-        <Footer />
-        </>
+        localStorage.getItem('login') === 'true' ?
+            <>
+                <Navbar />
+                <HomePage />
+                <Footer />
+            </>
+            : 
+                window.location.href = "/Log-In"
+            
+
     );
 }
 

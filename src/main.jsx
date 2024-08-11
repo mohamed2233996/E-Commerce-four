@@ -8,6 +8,16 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import SignUp from './pages/Sign Up.jsx';
+import LogIn from './pages/Log In.jsx';
+import Wishlist from './pages/Wishlist.jsx';
+import Cart from './pages/Cart.jsx';
+import CheckOut from './pages/CheckOut.jsx';
+import MyAccount from './pages/My Account.jsx';
+import About from './pages/About.jsx';
+import Cantact from './pages/Cantact.jsx';
+import NotFound from './pages/404 Not Found.jsx';
+
+
 
 const router = createBrowserRouter([
   {
@@ -15,9 +25,44 @@ const router = createBrowserRouter([
     element: <Root />,
   },
   {
-    path: "/Sign Up",
+    path: "/Sign-Up",
     element: <SignUp />,
   },
+  {
+    path: "/Log-In",
+    element: <LogIn />,
+  },
+  {
+    path: "/Wishlist",
+    element: <Wishlist />,
+  },
+  {
+    path: "/Cart",
+    element: <Cart />,
+  },
+  {
+    path: "/CheckOut",
+    element: <CheckOut />,
+  },
+  {
+    path: "/My-Account",
+    element: <MyAccount />,
+  },
+  {
+    path: "/About",
+    element: <About />,
+  },
+  {
+    path: "/Contact",
+    element: <Cantact />,
+  },
+  // 404 Not Found
+  {
+    path: "/404 Not Found",
+    element: <NotFound />,
+  }
+
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -72,6 +72,7 @@ const Categories = () => {
             <div className='container m-auto py-24 border-b border-gray-300'>
                 <SectionTitle
                     title='Categories'
+                    titleColor="text-Secondary"
                 />
                 <h2 className="font-bold text-3xl mt-4 mb-16 md:mb-0">Browse By Category</h2>
 

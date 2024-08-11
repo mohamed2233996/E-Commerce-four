@@ -1,20 +1,37 @@
 import React from 'react';
 
 const ProductBox = ({productKay, image, title, price, ratingCount }) => {
+    const addToWishlist = (productKay) => () => {
+        // set items in localStorage
+        localStorage.setItem('wishList', JSON.stringify([...JSON.parse(localStorage.getItem('wishList') || '[]'), productKay]));
+    }
+    const addToCart = (productKay) => () => {
+        // update quantity
+        const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
+        const itemIndex = cartItems.findIndex((item) => item.id === productKay);
+        if (itemIndex !== -1) {
+            cartItems[itemIndex].quantity++;
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+        } else {
+            cartItems.push({ id: productKay, quantity: 1 });
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+        }
+    }
+
+
     return (
         <div className="w-[270px] max-w-sm shadow-sm flex flex-col items-center">
-            <a href={productKay}>
                 <div className='img-card-div rounded-sm relative p-8 w-[200px] h-[200px] overflow-hidden flex items-center justify-center'>
                     <img
                         className="h-[120px] cursor-default m-auto"
                         src={image}
                         alt="product image"
                     />
-                    <button className='addToCart bg-black text-white font-bold -bottom-8 py-1 w-full text-center absolute'>
+                    <button onClick={addToCart(productKay)} className='addToCart bg-black text-white font-bold -bottom-8 py-1 w-full text-center absolute'>
                         Add To Cart
                     </button>
-                    <div className='absolute right-2 top-2 flex flex-col items-center z-10'>
-                        <button className='bg-gray-200 hover:text-Secondary rounded-lg p-2'>
+                    <div className='absolute right-2 z-10 top-2 flex flex-col items-center'>
+                        <button onClick={addToWishlist(productKay)} className='bg-gray-200 hover:text-Secondary rounded-lg p-2'>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={22} height={24} fill={"none"}>
                                 <path d="M19.4626 3.99415C16.7809 2.34923 14.4404 3.01211 13.0344 4.06801C12.4578 4.50096 12.1696 4.71743 12 4.71743C11.8304 4.71743 11.5422 4.50096 10.9656 4.06801C9.55962 3.01211 7.21909 2.34923 4.53744 3.99415C1.01807 6.15294 0.221721 13.2749 8.33953 19.2834C9.88572 20.4278 10.6588 21 12 21C13.3412 21 14.1143 20.4278 15.6605 19.2834C23.7783 13.2749 22.9819 6.15294 19.4626 3.99415Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                             </svg>
@@ -31,13 +48,12 @@ const ProductBox = ({productKay, image, title, price, ratingCount }) => {
                         -40%
                     </div>
                 </div>
-            </a>
+            <a href={productKay}>
             <div className="pb-5">
-                <a href="#">
+                
                     <h5 className="text-xl font-bold text-black text-nowrap">
                         {title}
                     </h5>
-                </a>
                 <div className="flex items-center justify-start">
                     <span className="text-xl font-bold text-Secondary">
                         {`$${price}`}
@@ -99,6 +115,7 @@ const ProductBox = ({productKay, image, title, price, ratingCount }) => {
                     </span>
                 </div>
             </div>
+            </a>
         </div>
 
     );

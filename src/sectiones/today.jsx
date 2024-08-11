@@ -90,6 +90,7 @@ const Today = () => {
             <div className='container m-auto py-20 border-b border-gray-300'>
                 <SectionTitle
                     title='Today’s'
+                    titleColor="text-Secondary"
                 />
                 <div className='flex flex-col items-start mb-16 md:mb-0 md:flex-row md:items-center gap-6 md:gap-14 mt-6'>
                     <h1 className='text-black font-bold text-4xl'> Flash Sales</h1>

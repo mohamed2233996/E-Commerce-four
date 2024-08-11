@@ -35,6 +35,7 @@ const Month = () => {
             <div className='container m-auto py-20'>
                 <SectionTitle
                     title='This Month'
+                    titleColor="text-Secondary"
                 />
                 <div className='flex flex-col justify-between md:flex-row md:items-center gap-6 md:gap-14 mt-6'>
                     <h1 className='text-black text-center font-bold text-4xl'>Best Selling Products</h1>

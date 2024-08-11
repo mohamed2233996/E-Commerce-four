@@ -17,3 +17,20 @@
 .carousel-container::-webkit-scrollbar{
     display: none;
 }
+
+
+.box1About:hover .icon-div{
+    background-color: white;
+}
+
+.box1About .icon-div svg{
+    color: white;
+}
+
+.box1About:hover .icon-div svg{
+    color: black;
+}
+
+.box1About:hover .textDiv{
+    color: white;
+}
