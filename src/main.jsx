@@ -8,7 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import SignUp from './pages/Sign Up.jsx';
-import LogIn from './pages/Log In.jsx';
+import LogIn from './Log In.jsx';
 import Wishlist from './pages/Wishlist.jsx';
 import Cart from './pages/Cart.jsx';
 import CheckOut from './pages/CheckOut.jsx';

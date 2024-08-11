@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import signUpImg from "../assets/imges/sign up.png"
-import Navbar from '../sectiones/Navbar';
-import Footer from '../sectiones/Footer';
+import Navbar from './sectiones/Navbar';
+import Footer from './sectiones/Footer';
 
 const LogIn = () => {
 
