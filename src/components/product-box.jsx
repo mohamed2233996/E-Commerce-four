@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductBox = ({productKay, image, title, price, ratingCount }) => {
     const addToWishlist = (productKay) => () => {
@@ -48,7 +49,7 @@ const ProductBox = ({productKay, image, title, price, ratingCount }) => {
                         -40%
                     </div>
                 </div>
-            <a href={productKay}>
+            <Link to={`/products/${productKay}`}>
             <div className="pb-5">
                 
                     <h5 className="text-xl font-bold text-black text-nowrap">
@@ -115,7 +116,7 @@ const ProductBox = ({productKay, image, title, price, ratingCount }) => {
                     </span>
                 </div>
             </div>
-            </a>
+            </Link>
         </div>
 
     );

@@ -16,6 +16,7 @@ import MyAccount from './pages/My Account.jsx';
 import About from './pages/About.jsx';
 import Cantact from './pages/Cantact.jsx';
 import NotFound from './pages/404 Not Found.jsx';
+import ProductDetails from './pages/Product Details.jsx';
 
 
 
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
   {
     path: "/404 Not Found",
     element: <NotFound />,
+  },
+  {
+    path: "/products/:productKay",
+    element: <ProductDetails />,
   }
 
 
