@@ -20,6 +20,11 @@ const Navbar = () => {
     const toggleDropdownVisibility = () => {
         setIsDropdownVisible(!isDropdownVisible);
     };
+
+    const signOut=()=>{
+        localStorage.setItem('login', false);
+        window.location.reload();
+    }
     return (
         <>
             <div className="top-header bg-black">
@@ -91,7 +96,7 @@ const Navbar = () => {
                                                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                                                        <a href="#" onClick={signOut} class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
                                                     </li>
                                                 </ul>
                                             </div>
